@@ -1,0 +1,19 @@
+[build]
+  command = "pnpm build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "24"
+  PNPM_VERSION = "12.16.1"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[context.production]
+  command = "pnpm check:release && pnpm build"
+
+# Preview content is still publicly reachable if shared. Do not upload sensitive
+# material. noindex is an indexing policy, not access control.
+[context.deploy-preview]
+  command = "pnpm build && node scripts/preview-headers.mjs"
+
+[context.branch-deploy]
+  command = "pnpm build && node scripts/preview-headers.mjs"

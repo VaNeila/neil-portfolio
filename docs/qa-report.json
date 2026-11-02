@@ -1,0 +1,69 @@
+{
+  "target": "Local static homepage, review mode",
+  "tool": "Lighthouse 13.6.0",
+  "formFactor": "mobile",
+  "runs": [
+    {
+      "run": 1,
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 63
+      },
+      "lcpMs": 1052,
+      "cls": 0,
+      "tbtMs": 10,
+      "failedBinaryAudits": [
+        "is-crawlable",
+        "bf-cache"
+      ]
+    },
+    {
+      "run": 2,
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 63
+      },
+      "lcpMs": 1052,
+      "cls": 0,
+      "tbtMs": 6,
+      "failedBinaryAudits": [
+        "is-crawlable",
+        "bf-cache"
+      ]
+    },
+    {
+      "run": 3,
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 63
+      },
+      "lcpMs": 1051,
+      "cls": 0,
+      "tbtMs": 5,
+      "failedBinaryAudits": [
+        "is-crawlable",
+        "bf-cache"
+      ]
+    }
+  ],
+  "medianScores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 63
+  },
+  "medianLcpMs": 1052,
+  "medianCls": 0,
+  "medianTbtMs": 6,
+  "limitations": [
+    "SEO score is intentionally reduced by noindex metadata and robots.txt in review mode.",
+    "Local lab measurements are not deployed or field Core Web Vitals.",
+    "Native Safari, Firefox, physical mobile browsers, VoiceOver and NVDA still need manual verification."
+  ]
+}

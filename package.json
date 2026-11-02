@@ -1,0 +1,42 @@
+{
+  "name": "neil-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "node --import tsx scripts/guard-build.ts && next build && node --import tsx --test tests/export.test.ts",
+    "start": "node scripts/serve.mjs",
+    "lint": "eslint",
+    "preview": "node scripts/serve.mjs",
+    "typecheck": "next typegen && tsc --noEmit",
+    "check:content": "node --import tsx --test tests/content.test.ts",
+    "check:release": "node --import tsx scripts/guard-build.ts --release",
+    "test:smoke": "node node_modules/@playwright/test/cli.js test",
+    "check": "pnpm lint && pnpm typecheck && pnpm check:content && pnpm build",
+    "assets:brand": "node scripts/generate-brand.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^1.66.0",
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": "24.x"
+  }
+}
